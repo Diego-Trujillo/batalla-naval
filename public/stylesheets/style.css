@@ -1,0 +1,77 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#card {
+  background: #eee;
+}
+
+.glyphicon-big{
+  font-size: 60px ;
+  color: #555 ;
+  margin-bottom: 10px;
+}
+
+.link-no-style {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.link-no-style:link {
+  color: inherit;
+  text-decoration: inherit;
+}
+/* Message Board */
+.message-board-jumbotron{
+  height: 210px;
+}
+
+.message-board-container{
+  height: 120px;
+  overflow-y: scroll;
+}
+
+
+
+/* Panel Hover */
+.panel-hover {
+  border-radius: 20px;
+}
+
+.panel-hover:hover {
+  background-color: #f5f5f5;
+}
+
+/* BATTLESHIP GRID */
+.battleship-cell {
+    position:relative;
+    background: #ddd;
+    width:100%;
+    height: 30px;
+    overflow: hidden;
+}
+
+.battleship-cell:hover {
+  background: #f5f5f5;
+}
+
+.battleship-cell-free{
+  background: #ddd;
+}
+
+.battleship-cell-occupied{
+  background: #5cb85c;
+}
+
+.battleship-cell-marked{
+  background: #777;
+}
+
+.battleship-cell-hit{
+  background: #d9534f;
+}

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    
+    <h1 class="col-xs-12">Jugadores</h1>
+    
+    <table class="col-xs-12 table table-hover">
+      <tr>
+        <th>Número</th>
+        <th>Nombre</th>
+        <th>Victorias</th>
+        <th>Partidas Jugadas</th>
+      </tr>
+
+      <% users.forEach((user, index, users)=>{ %> 
+        <tr>
+          <td> <%= index %> </td>
+          <td><em><%= user.name %></em></td>
+          <td> <%= user.victories %> </td>
+          <td> <%= user.gamesPlayed %> </td>
+        </tr>
+      <% });  %>
+
+    </table>  
+    
+  </div>
+</div>

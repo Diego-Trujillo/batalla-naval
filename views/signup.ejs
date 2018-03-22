@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    
+    <div class="row col-xs-12 col-sm-4 col-sm-offset-4" style="padding-top:2em;">
+      <div class="panel panel-default">
+
+        <div class="panel-body" style="background: #eee;">
+            <!--
+          <div class="col-xs-12" style="margin-bottom:25px;">
+            <img src="/images/vectors/shipLogo.svg" class="col-xs-8 col-xs-offset-2" style="height:200px;" />
+          </div> -->
+          <h2 class="col-xs-12 text-center">Nueva cuenta</h2>
+          <p class="text-center">Ingresa la siguiente información</p>
+          
+          <form id="signup-form" action="/auth/signup/" method="post" name="Login_Form" class="login"> 
+            <div style="margin-top: 20px; margin-bottom: 25px" class="col-xs-12 input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Usuario">                                        
+            </div>
+                                    
+            <div style="margin-bottom: 25px" class="col-xs-12 input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="login-password" type="password" class="form-control" name="password" placeholder="Contraseña">
+            </div>
+            
+            <div style="margin-bottom: 35px" class="col-xs-12 input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="login-password-repeat" type="password" class="form-control" name="password" placeholder="Contraseña (Nuevamente)">
+            </div>
+            
+            <button class="col-xs-12 btn btn-lg btn-primary btn-block" style="margin-bottom:10px;" name="Submit" value="Login" type="Submit">Registrarme</button> 
+
+          </form>
+          
+          <p class="col-xs-12 text-center"><small>¿Ya tienes cuenta? <a href="/login/">Iniciar Sesión</a></small></p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<script src="/javascripts/signup-controller.js"></script>

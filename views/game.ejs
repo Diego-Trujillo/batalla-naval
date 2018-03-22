@@ -1,0 +1,138 @@
+<div class="container">
+  <div class="row">
+    
+    <h1 class="col-xs-12 col-sm-8">Juego<small id="game-name"></small></h1>
+    <h2 class="col-xs-12 col-sm-4" style="margin-bottom:40px;"><span class=" col-xs-12 label label-default" id="game-status">Coloca tus naves</span></h2>
+    <!-- Tablero Jugador -->
+    <div class="col-xs-12 col-lg-6">
+      <div class="col-xs-12 jumbotron" >
+        <h2 class="col-xs-12" style="margin-bottom: 30px;">
+          <span id='playerName' class="col-xs-8"><%= username.name %></span>
+          <small><span class="col-xs-4 label label-success">Tú</span></small>
+        </h2>
+        <div id="player-board"></div>
+      </div>
+    </div>
+    
+    <!-- Tablero Oponente -->
+    <div class="col-xs-12 col-lg-6">
+      <div class="col-xs-12 jumbotron">
+        <h2 class="col-xs-12" style="margin-bottom: 30px;">
+          <span id='opponent-name' class="col-xs-8">&nbsp;</span>
+          <small><span class="col-xs-4 label label-danger">Oponente</span></small>
+        </h2>
+        <div id="opponent-board"></div>
+      </div>
+    </div>
+    
+    
+    <!-- Panel Coordenadas -->
+    <div class="col-xs-12 col-md-6">
+      <div class="col-xs-12 jumbotron">
+        <h3 class="col-xs-12" style="margin-bottom: 20px;">Ingresa la coordenada:</h3>
+        
+        <form id="coordinate-form" action="/battleship/x" method="put" name="Coordinate_Form" class="login col-xs-12"> 
+          <div class="col-xs-12 input-group input-group-lg">
+            <input type="text" class="form-control" placeholder="A1, B5, H9 ..." name="coordinateStringInput" id="coordinateStringInput">
+            <span class="input-group-btn">
+              <button class="btn btn-primary" action="submit"  id="coordinateButton">Tirar</button>
+            </span>
+          </div>
+        </form> 
+      </div>
+    </div>
+    
+    <!-- Panel Mensajes -->
+    <div class="col-xs-12 col-md-6">
+      <div class="col-xs-12 jumbotron message-board-jumbotron" >
+        <!-- <h3 class="col-xs-12" style="margin-bottom: 20px;">Mensajes</h3> -->
+        <!-- <p style="margin-bottom: 20px;"></p> -->
+        <div class="col-xs-12 message-board-container" id="messageBoard">
+          <h3 class="col-xs-12" id="messages-title" style="color:#555">Mensaje</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel Barcos -->
+    <div class="col-xs-12" id="shipPanel">
+      <div class="col-xs-12 jumbotron">
+        
+          <h2 class="col-xs-12" style="margin-bottom: 15px;">Barcos Disponibles</h2>
+          
+            <h2 class="col-xs-12 col-sm-6" ><span class=" col-xs-12 label label-default" id="selectedOrientationText">Horizontal</span></h2>
+            <h2 class="col-xs-12 col-sm-6" style="margin-bottom: 30px;"><span class="col-xs-12 label label-default" id="selectedShipText">Portaaviones</span></h2>
+          
+        
+  
+        
+        <div class="col-xs-12 col-lg-3 container text-center">
+          <h3 class="col-xs-12">Alineación</h3>
+          <button class="col-xs-12 btn btn-primary" style="margin-bottom: 15px;" id="orientationButtonHorizontal">Horizontal</button>
+          <button class="col-xs-12 btn btn-primary" style="margin-bottom: 15px;" id="orientationButtonVertical">Vertical</button>
+        </div>
+        
+        <a href="javascript:void(0)" id='Portaaviones' class="ship-item">
+          <div class="col-xs-12 col-sm-6 col-lg-3">
+            <div class="col-xs-12 panel panel-default panel-hover" >
+              <div class="panel-body text-center">
+                <img src="/images/boats/Portaaviones.png" style="height: 64px; width: 64px;"> </img>
+                <h3 style='color: #333;'>Portaaviones<br /><small>Tamaño: 5</small></h3>
+              </div>
+            </div>
+          </div>
+        </a>
+  
+        <a href="javascript:void(0)" id='Acorazado' class="ship-item">
+          <div class="col-xs-12 col-sm-6 col-lg-3">
+            <div class="col-xs-12 panel panel-default panel-hover" >
+              <div class="panel-body text-center">
+                <img src="/images/boats/Acorazado.png" style="height: 64px; width: 64px;"> </img>
+                <h3 style='color: #333;'>Acorazado<br /><small>Tamaño: 4</small></h3>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+        <a href="javascript:void(0)" id='Crucero' class="ship-item">
+          <div class="col-xs-12 col-sm-6 col-lg-3">
+            <div class="col-xs-12 panel panel-default panel-hover" >
+              <div class="panel-body text-center">
+                <img src="/images/boats/Crucero.png" style="height: 64px; width: 64px;"> </img>
+                <h3 style='color: #333;'>Crucero<br /><small>Tamaño: 3</small></h3>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+        <div class="col-xs-12 hidden-xs hidden-sm hidden-md col-lg-3"></div>
+        
+        <a href="javascript:void(0)" id='Submarino' class="ship-item">
+          <div class="col-xs-12 col-sm-6 col-lg-3">
+            <div class="col-xs-12 panel panel-default panel-hover" >
+              <div class="panel-body text-center">
+                <img src="/images/boats/Submarino.png" style="height: 64px; width: 64px;"> </img>
+                <h3 style='color: #333;'>Submarino<br /><small>Tamaño: 3</small></h3>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="javascript:void(0)" id='Destructor' class="ship-item">
+          <div class="col-xs-12 col-sm-6 col-lg-3">
+            <div class="col-xs-12 panel panel-default panel-hover" >
+              <div class="panel-body text-center">
+                <img src="/images/boats/Destructor.png" style="height: 64px; width: 64px;"> </img>
+                <h3 style='color: #333;'>Destructor<br /><small>Tamaño: 2</small></h3>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+      </div>
+    </div>
+    <!-- Panel Barcos -->
+  
+  </div>
+</div>
+
+<script src="/javascripts/game-controller.js"></script>
